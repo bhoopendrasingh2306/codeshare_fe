@@ -30,7 +30,6 @@ function EditorPage() {
         
       });
 
-      //listening for joined events
       socketRef.current.on(
         'user-joined',
         ({clients,username,socketId})=>{
@@ -45,7 +44,6 @@ function EditorPage() {
         }
       )
       
-      //listening for disconnected events
       socketRef.current.on(
         'disconnected',
         ({username,socketId})=>{
@@ -109,7 +107,6 @@ function EditorPage() {
       
       {/* Sidebar */}
       <div className="bg-gray-800 w-64 p-4 flex flex-col">
-        {/* <div className="text-white text-xl font-bold mb-4">CODESHARE</div> */}
         <img src={logo} alt="codeshare" className="mb-4" />
         <div className="text-gray-400 mb-2">Members</div>
         <div className="flex items-center space-x-3 mb-4">

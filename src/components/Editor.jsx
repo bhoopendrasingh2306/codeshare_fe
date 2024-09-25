@@ -22,21 +22,16 @@ const Editor=({socketRef, roomId, onCodeChange})=> {
 
                 }
             );
-            // editor.setSize(null,"100%")
             editorRef.current.on('change',(instance,changes)=>{
-                // console.log('changes',changes);
-                // console.log('socket ref changes',socketRef.current)
                 const {origin}=changes;
                 const code = instance.getValue();
                 onCodeChange(code);
                 if(origin !=='setValue'){
-                    // console.log("working",code)
                     socketRef.current.emit('code-change',{
                         roomId,
                         code
                     });
                 }
-                // console.log("wooooowii->",code);
             })
         };
         init();

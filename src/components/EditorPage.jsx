@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useEffect, useState , useRef } from "react";
-import Client from "./client";
+import Client from "./Client";
 import Editor from "./Editor";
 import { initSocket } from "../socket";
 import {useNavigate,useLocation,useParams, Navigate} from 'react-router-dom'
